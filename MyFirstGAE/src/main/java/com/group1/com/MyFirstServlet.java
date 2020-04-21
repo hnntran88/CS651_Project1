@@ -1,4 +1,4 @@
-package grewe.ilab.com;
+package com.group1.com;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

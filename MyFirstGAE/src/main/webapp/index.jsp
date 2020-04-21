@@ -1,13 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>Facebook Login JavaScript Example</title>
-<meta charset="UTF-8">
+<head>
+        <title>Home | Project 1</title>
+        <STYLE>A {text-decoration: none;} </STYLE>
+        <link type="text/css" href="index.css" rel="stylesheet" />        
 </head>
+
 <body>
+
+	<header>
+            <h1>Facebook Tweet</h1>
+            <nav>
+                <p><a style="background-color: grey;" href = "index.html" >Tweet&nbsp;&nbsp;</a>
+                &nbsp;<a href = "friends.jsp" >Friends&nbsp;&nbsp;</a>
+                &nbsp;<a href = "toptweets.jsp" >Top Tweets&nbsp;&nbsp;</a></p>
+            </nav>
+	</header>
+
 <script>
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
@@ -18,8 +28,9 @@ function statusChangeCallback(response) {
       // Full docs on the response object can be found in the documentation
       // for FB.getLoginStatus().
       if (response.status === 'connected') {
-            // Logged into your app and Facebook.
+            // Logged into your app and Facebook. 
              testAPI();
+             window.location.href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken;
        } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
              document.getElementById('status').innerHTML = 'Please log ' +'into this app.';
@@ -85,19 +96,6 @@ function testAPI() {
        });
 }
 
-
-// Here we run a very simple test of the Graph API after login is
-// successful to post a message to the user me. See statusChangeCallback() for when this call is made.
-function testMessageCreate() {
- console.log('Posting a message to user feed.... ');
- //first must ask for permission to post and then will have call back function defined right inline code
- // to post the message.
- FB.login(function(){
-       var typed_text = document.getElementById("message_text").value;
-        FB.api('/me/feed', 'post', {message: typed_text});
-        document.getElementById('theText').innerHTML = 'Thanks for posting the message' + typed_text;
-   }, {scope: 'publish_actions'});
-}
 </script>
 
 <!--
@@ -109,15 +107,15 @@ the FB.login() function when clicked.
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-<div id="status">
-</div>
+<div id="status"></div>
 
-Hit Button to Post Message to Feed
-<input type="text" value="enter in text" id="message_text"/>
-<input type="button" value="enter" onclick="testMessageCreate();"/>
-<br><br>
+<div id="fb-root"></div>
 
-<div id="theText"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=743210759543764&autoLogAppEvents=1"></script>
+
+Click button to share a tweet.
+
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
 </body>
 </html>
