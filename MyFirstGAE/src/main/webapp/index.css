@@ -1,0 +1,73 @@
+body {
+    background-image: url(background.jpg);
+}
+
+header {
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    background-color: rgb(33,33,33);
+    width: 100%; 
+    margin-bottom: 1em;
+    padding: 1em;
+}
+body header h1 {
+    color: ghostwhite;
+    font-family: "Verdana", sans-serif;
+}
+
+nav p a {
+    color: whitesmoke;
+    font-family: "Verdana", sans-serif;
+}
+nav p a:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+nav a {
+    color: whitesmoke;
+    font-family: "Verdana", sans-serif;
+}
+
+main{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%; 
+    background-color: rgb(33,33,33);
+    padding: 10em;
+    padding-top: 2em;
+}
+
+
+main p {
+    color: whitesmoke;
+    font-family: "Verdana", sans-serif;
+}
+
+li {
+    color: whitesmoke;
+    font-family: "Verdana", sans-serif; 
+}
+
+span.photoref {
+    font-size: .8em;
+}
+
+span.plus {
+    font-family: "Verdana", sans-serif;
+    font-size: .75em;
+}
+
+ul {
+    list-style-type: square;
+}
+
+span a, table a {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.link {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
