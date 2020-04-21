@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +32,7 @@ function statusChangeCallback(response) {
       if (response.status === 'connected') {
             // Logged into your app and Facebook. 
              testAPI();
-             window.location.href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken;
+             //window.location.href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken;
        } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
              document.getElementById('status').innerHTML = 'Please log ' +'into this app.';
@@ -116,6 +118,8 @@ the FB.login() function when clicked.
 Click button to share a tweet.
 
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+<a href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken />
 
 </body>
 </html>
