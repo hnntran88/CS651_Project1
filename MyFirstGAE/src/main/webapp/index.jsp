@@ -120,6 +120,8 @@ Click button to share a tweet.
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
 <a href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken />
+<br>
+<a href='/hello'>The servlet</a></td>
 
 </body>
 </html>
