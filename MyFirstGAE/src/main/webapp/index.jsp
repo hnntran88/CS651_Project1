@@ -31,8 +31,8 @@ function statusChangeCallback(response) {
       // for FB.getLoginStatus().
       if (response.status === 'connected') {
             // Logged into your app and Facebook. 
-             testAPI();
-             //window.location.href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken;
+            testAPI();
+            window.location.href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken;
        } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
              document.getElementById('status').innerHTML = 'Please log ' +'into this app.';
@@ -58,7 +58,7 @@ FB.init({
        cookie : true, // enable cookies to allow the server to access
        // the session
        xfbml : true, // parse social plugins on this page
-       version : 'v2.1' // use version 2.1
+       version : 'v6.0' // use version 2.1
 });
 
 // Now that we've initialized the JavaScript SDK, we call
@@ -119,9 +119,8 @@ Click button to share a tweet.
 
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
-<a href='Sign_in_Controller.jsp?access_token='+response.authResponse.accessToken />
 <br>
-<a href='/hello'>The servlet</a></td>
+<a href='/hello'>Google Datastore</a>
 
 </body>
 </html>

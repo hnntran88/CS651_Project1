@@ -13,7 +13,7 @@ public class Post_Modal {
       public List < Post_Use_Bean > call_me_to_get_posts(String access_token) throws Exception {
         List < Post_Use_Bean > list_posts = new ArrayList < Post_Use_Bean > ();
         try {
-            String url = "https://graph.facebook.com/v2.1/me/posts?access_token=" + access_token;
+            String url = "https://graph.facebook.com/v6.0/me/posts?access_token=" + access_token;
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             // optional default is GET
@@ -58,7 +58,7 @@ public class Post_Modal {
         } catch (Exception e) {
             System.out.println(e);
         }
-        //return list_posts;
+    //return list_posts;
 	return list_posts;
     }
 }

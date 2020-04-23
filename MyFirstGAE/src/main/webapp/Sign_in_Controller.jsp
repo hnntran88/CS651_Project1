@@ -12,9 +12,14 @@ pageEncoding="ISO-8859-1"%>
 <%
 String access_token=(String)request.getParameter("access_token");
 Profile_Modal obj_Profile_Modal=new Profile_Modal();
-Profile_Bean obj_Profile_Bean= obj_Profile_Modal.call_me(access_token);
+Profile_Bean obj_Profile_Bean=obj_Profile_Modal.call_me(access_token);
 obj_Profile_Bean.setAccess_token(access_token);
 session.setAttribute("fb_user_session", obj_Profile_Bean);
 %>
+
+<script type="text/javascript">
+ 	window.location.href="friends.jsp";
+</script>
+
 </body>
 </html>
